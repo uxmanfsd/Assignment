@@ -6,17 +6,17 @@ void merge(int arr[], int left, int mid, int right) {
     int n1 = mid - left + 1; // Size of left subarray
     int n2 = right - mid;    // Size of right subarray
 
-    // Allocate memory for temporary subarrays
+    // Allocate Memory for temporary subarrays
     int *L = (int *)malloc(n1 * sizeof(int));
     int *R = (int *)malloc(n2 * sizeof(int));
 
-    // Copy data to temp arrays L[] and R[]
+    // Copy daata to temp arrays L[] and R[]
     for (int i = 0; i < n1; i++)
         L[i] = arr[left + i];
     for (int j = 0; j < n2; j++)
         R[j] = arr[mid + 1 + j];
 
-    // Merge the two subarrays back into the original array
+    // Merge   the two subarrays back into the original array
     int i = 0, j = 0, k = left;
     while (i < n1 && j < n2) {
         if (L[i] <= R[j])
